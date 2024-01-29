@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import InputMask from 'react-input-mask';
 import { useNavigate } from 'react-router-dom';
 import { format } from 'date-fns';
@@ -13,35 +13,35 @@ import Component_6 from './assets/Component_6.png';
 import Component_7 from './assets/Component_7.svg';
 
 
-interface Option {
-  value: string;
-  label: string;
-}
+// interface Option {
+//   value: string;
+//   label: string;
+// }
 
 function App() {
   const navigate = useNavigate();
 
-  const [selectedOptions, setSelectedOptions] = useState<Option[]>([]);
-  const [isDropdownOpen, setDropdownOpen] = useState(false);
+  // const [selectedOptions, setSelectedOptions] = useState<Option[]>([]);
+  // const [isDropdownOpen, setDropdownOpen] = useState(false);
 
-  const options: Option[] = [
-    { value: 'carro', label: 'Carro' },
-    { value: 'moto', label: 'Moto' },
-    { value: 'caminhão', label: 'Caminhão' },
-    { value: 'bicicleta', label: 'Bicicleta' },
-  ];
+  // const options: Option[] = [
+  //   { value: 'carro', label: 'Carro' },
+  //   { value: 'moto', label: 'Moto' },
+  //   { value: 'caminhão', label: 'Caminhão' },
+  //   { value: 'bicicleta', label: 'Bicicleta' },
+  // ];
 
-  const handleOptionChange = (option: Option) => {
-    if (selectedOptions.some((item) => item.value === option.value)) {
-      setSelectedOptions(selectedOptions.filter((item) => item.value !== option.value));
-    } else {
-      setSelectedOptions([...selectedOptions, option]);
-    }
-  };
+  // const handleOptionChange = (option: Option) => {
+  //   if (selectedOptions.some((item) => item.value === option.value)) {
+  //     setSelectedOptions(selectedOptions.filter((item) => item.value !== option.value));
+  //   } else {
+  //     setSelectedOptions([...selectedOptions, option]);
+  //   }
+  // };
 
-  const toggleDropdown = () => {
-    setDropdownOpen(!isDropdownOpen);
-  };
+  // const toggleDropdown = () => {
+  //   setDropdownOpen(!isDropdownOpen);
+  // };
 
   const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -52,7 +52,7 @@ function App() {
     const formData = {
       Nome: e.currentTarget.Nome.value,
       Whatsapp: e.currentTarget.Whatsapp.value,
-      Veiculo: selectedOptions.map(option => option.label).join(', '),
+      // Veiculo: selectedOptions.map(option => option.label).join(', '),
       DataHoraPreenchimento: formattedDateTime,
     };
   
@@ -135,6 +135,10 @@ function App() {
     });
   };
 
+  const onClick = () => {
+    navigate('./terms')
+  };
+
   return (
     <div className='overflow-x-hidden w-full bg-blue flex flex-col font-montserrat items-center'>
       <header className='bg-white w-full flex h-20'>
@@ -142,7 +146,7 @@ function App() {
       </header>
       <section className='h-full w-full bg-bg-sm md:bg-bg-mid lg:bg-bg-image bg-cover  '>
         <div className='flex flex-col items-center justify-evenly lg:justify-evenly lg:items-start lg:ml-44 h-screen m-2'>
-          <div className='backdrop-blur-lg bg-black/10 border-0 rounded-3xl flex flex-col justify-center items-center p-5 w-full md:w-[600px] lg:w-[480px] lg:h-[480px]'>
+        <div className='backdrop-blur-lg bg-black/10 border-1 rounded-3xl flex flex-col justify-center items-center p-5 w-full md:w-[600px] lg:w-[480px] lg:h-[480px]'>
             <div className=''>
               <h1 className='uppercase text-white text-xl font-extrabold text-center md:text-4xl md:mt-10 lg:text-2xl'>
                 proteção completa <br /> para o seu veículo
@@ -152,7 +156,7 @@ function App() {
               </p>
             </div>
             <div>
-              <form className='flex flex-col items-center justify-center md:m-5 lg:m-0 ' onSubmit={handleFormSubmit}>
+              <form className='flex flex-col items-center justify-center md:m-5 lg:m-0 lg:gap-5' onSubmit={handleFormSubmit}>
                 <input
                   name='Nome' 
                   placeholder='Nome*' 
@@ -168,7 +172,7 @@ function App() {
                   type='tel'
                   className='w-full px-3 py-2 rounded-lg m-1 md:w-[460px] md:py-4 md:mb-4 md:text-2xl lg:text-lg lg:w-[400px] lg:mb-1 lg:py-3'
                 />
-                <div className='py-1 rounded-lg'>
+                {/*<div className='py-1 rounded-lg'>
                   <div
                     className='bg-white cursor-pointer flex justify-between px-4 py-2 rounded-lg w-80 text-black/80 md:w-[460px] md:py-4 md:mb-3 md:text-2xl lg:text-lg lg:w-[400px] lg:mb-1 lg:py-3'
                     onClick={toggleDropdown}
@@ -194,9 +198,10 @@ function App() {
                       ))}
                     </div>
                   )}
-                </div>
-                <button className='bg-red-700 rounded-lg text-white uppercase font-extrabold p-3 m-5 my-2 text-xs hover:animate-spin shadow-bs1 hover:shadow-red-700/80 shadow-red-700/50 hover:scale-[1.03] md:p-5 md:text-xl md:mt-10 lg:mb-10 lg:my-2 lg:mx-12 lg:text-base'>quero proteger meu veículo</button>
+                      </div>*/}
+                <button className='bg-red-700 rounded-lg text-white uppercase font-extrabold p-3 text-xs my-3 hover:animate-spin shadow-bs1 hover:shadow-red-700/80 shadow-red-700/50 hover:scale-[1.03] md:p-5 md:text-xl md:mt-10 lg:mb-5 lg:my-0 lg:mx-12 lg:text-base'>quero proteger meu veículo</button>
               </form>
+              <p className='text-white text-center px-9 md:px-20 lg:px-10 md:text-xs text-[8px]'>Ao preencher o formulário, concordo em receber comunicação e estou de acordo com os <a onClick={onClick} className='cursor-pointer underline font-semibold'>termos de uso</a>.</p>
             </div>
           </div>
           <div className='w-full flex items-center justify-center'>
