@@ -1,9 +1,10 @@
-import BoxPhone from "@/components/BoxPhone";
+import BoxCity from "@/components/BoxCity";
+
 
 const TestScreen = () => {
     return(
         <div className="bg-gray-900 flex items-center justify-center">
-            <BoxPhone />
+            <BoxCity />
         </div>
     )
 }
