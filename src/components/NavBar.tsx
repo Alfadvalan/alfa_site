@@ -47,14 +47,14 @@ const NavBar = () => {
                         </a>
                         {isNavDropdownOpen && (
                             <ul className='absolute cursor-pointer flex flex-col  justify-center pt-5 px-2 bg-white'>
-                                <li className="w-full border-b-1 p-2 border-gray-100 hover:bg-gray-50">
-                                    <a href="../assets/docs/NOVO_REGULAMENTO.pdf" className="mx-3" download>Novo Regulamento</a>
+                                <li className="w-full border-b-1 p-2 border-gray-100 hover:bg-gray-50 text-center">
+                                    <a href="./assets/docs/REGULAMENTO_INTERNO.pdf" className="" download>Regulamento Interno</a>
                                 </li>
-                                <li className="w-full border-b-1 p-2 border-gray-100 hover:bg-gray-50">
-                                    <a href="../assets/docs/REGULAMENTO_INTERNO_TERCEIROS.pdf" className="mx-3" download>Regulamento Terceiros</a>
+                                <li className="w-full border-b-1 p-2 border-gray-100 hover:bg-gray-50 text-center">
+                                    <a href="./assets/docs/REGULAMENTO_INTERNO_TERCEIROS.pdf" className="" download>Regulamento Terceiros</a>
                                 </li>
-                                <li className="w-full border-b-1 p-2 border-gray-100 hover:bg-gray-50">
-                                    <a href="../.assets/docs/MANUAL_DA_ASSISTENCIA.pdf" className="mx-3" download>Manual da Assistência</a>
+                                <li className="w-full border-b-1 p-2 border-gray-100 hover:bg-gray-50 text-center">
+                                    <a href="./assets/docs/MANUAL_DA_ASSISTENCIA.pdf" className="" download>Manual da Assistência</a>
                                 </li>
                             </ul>
                         )}
