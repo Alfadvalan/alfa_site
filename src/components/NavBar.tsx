@@ -1,7 +1,9 @@
 import { useState } from "react";
 import logo_color from '../assets/logo_color.png';
 import { CgMenu, CgClose } from "react-icons/cg";
-
+import assistencia from '../assets/docs/assistencia.pdf';
+import terceiros from '../assets/docs/terceiros.pdf';
+import interno from '../assets/docs/interno.pdf';
 
 const NavBar = () => {
     const [isNavDropdownOpen, setNavDropdownOpen] = useState(false);
@@ -39,22 +41,21 @@ const NavBar = () => {
                     </li>
                     <li className="">
                         <a
-                            className='hover:text-red-700'
-                            href="#"
+                            className='hover:text-red-700 hover:cursor-pointer'
                             onClick={navDropdown}
                         >
                             Regulamentos <span className={`font-mono ml-2 duration-300 ${isNavDropdownOpen ? 'rotate-90' : ''} inline-block`}>{'>'}</span>
                         </a>
                         {isNavDropdownOpen && (
-                            <ul className='absolute cursor-pointer flex flex-col  justify-center pt-5 px-2 bg-white'>
+                            <ul className='absolute cursor-pointer flex flex-col justify-center pt-5 px-2 bg-white'>
                                 <li className="w-full border-b-1 p-2 border-gray-100 hover:bg-gray-50 text-center">
-                                    <a href="./assets/docs/REGULAMENTO_INTERNO.pdf" className="" download>Regulamento Interno</a>
+                                    <a href={interno} type="application/pdf" download="Regulamento Interno">Regulamento Interno</a>
                                 </li>
                                 <li className="w-full border-b-1 p-2 border-gray-100 hover:bg-gray-50 text-center">
-                                    <a href="./assets/docs/REGULAMENTO_INTERNO_TERCEIROS.pdf" className="" download>Regulamento Terceiros</a>
+                                    <a href={terceiros} type="application/pdf" download="Regulamento Terceiros">Regulamento Terceiros</a>
                                 </li>
                                 <li className="w-full border-b-1 p-2 border-gray-100 hover:bg-gray-50 text-center">
-                                    <a href="./assets/docs/MANUAL_DA_ASSISTENCIA.pdf" className="" download>Manual da Assistência</a>
+                                    <a href={assistencia} type="application/pdf" download="Manual da Assistência">Manual da Assistência</a>
                                 </li>
                             </ul>
                         )}
